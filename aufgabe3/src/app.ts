@@ -1,9 +1,17 @@
 import fetch from 'node-fetch';
 import https from 'https';
 
-
 interface TodoItem {
-    // TODO: Implement your interface with the properties todoItemTitle, title, createdAt und updatedAt.
+    todoItemGuid: string;
+    todoItemTitle: string;
+    todoItemIsCompleted: boolean;
+    todoItemDueDate: string;
+    guid: string;
+    title: string;
+    isCompleted: boolean;
+    dueDate: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 const agent = new https.Agent({
@@ -12,7 +20,17 @@ const agent = new https.Agent({
 
 // TODO: Write a type guard for TodoItem
 //       Vervollständige die Funktionsdeklaration mit den Parametern und dem Rückgabewert.
-function isTodoItem... {
+function isTodoItem(item: any): item is TodoItem {
+    console.log(item);
+    return typeof item.todoItemGuid === 'string' &&
+           typeof item.todoItemTitle === 'string' &&
+           typeof item.todoItemIsCompleted === 'boolean' &&
+           typeof item.guid === 'string' &&
+           typeof item.title === 'string' &&
+           typeof item.isCompleted === 'boolean' &&
+           (typeof item.dueDate === 'string' || typeof item.dueDate === 'object') &&
+           typeof item.createdAt === 'string' &&
+           typeof item.updatedAt === 'string';
 }
 
 async function fetchTodoTasks(): Promise<TodoItem[]> {
@@ -23,7 +41,18 @@ async function fetchTodoTasks(): Promise<TodoItem[]> {
     const data: any = await response.json();
     // TODO: Erstelle ein TodoItem mit den Properties todoItemTitle, title, createdAt und updatedAt.
     //       und speichere die Daten in todoItems.    
-    const todoItems = null; // Your implementation
+    const todoItems: TodoItem[] = data.map((item: any) => ({
+        todoItemGuid: item.todoItemGuid,
+        todoItemTitle: item.todoItemTitle,
+        todoItemIsCompleted: item.todoItemIsCompleted,
+        todoItemDueDate: item.todoItemDueDate,
+        guid: item.guid,
+        title: item.title,
+        isCompleted: item.isCompleted,
+        dueDate: item.dueDate,
+        createdAt: item.createdAt,
+        updatedAt: item.updatedAt,
+    }));
     // Überprüfen, ob die Antwort dem Category-Interface entspricht
     if (Array.isArray(todoItems) && todoItems.every(isTodoItem)) {
         return todoItems;
