@@ -1,7 +1,7 @@
 const fs = require('fs');
 const rawdata = fs.readFileSync('driving_school.json');
 const data = JSON.parse(rawdata);
-
+console.log(data.driving_school.cources);
 // GENERELLE HINWEISE
 // Du kannst zusätzliche Variablen verwenden, wenn es für die Bearbeitung nötig oder leichter ist.
 // Jede Aufgabe hat einen Scope (also eigene { }), daher sind die Variablen nur dort gültig.
@@ -11,7 +11,7 @@ const data = JSON.parse(rawdata);
 // Welche Kurse werden angeboten? Gib course_name, course_code und die Anzahl der Blöcke an.
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const result = data.driving_school.courses.map(course => ({ course_name: course.course_name, course_code: course.course_code, blocks: course.blocks.length })); // Replace null with your implementation.
     console.log("AUFGABE 1");
     console.table(result);
 }
@@ -23,7 +23,9 @@ const data = JSON.parse(rawdata);
 //          Erstelle danach ein neues JSON Object in result mit den 2 Properties.
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const result = data.driving_school.courses
+        .filter(course => course.course_code === 'CA101')
+        .map(course => ({ course_name: course.course_name, course_code: course.course_code }))[0];
     console.log("AUFGABE 2");
     console.log(result)
 }
@@ -36,7 +38,14 @@ const data = JSON.parse(rawdata);
 //          Verwende Math.min() und Math.max() mit dem Spread Operator (...)
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const course = data.driving_school.courses
+        .find(course => course.course_code === 'BC101');
+    const result = {
+        course_name: course.course_name,
+        course_code: course.course_code,
+        lowest_price: Math.min(...course.blocks.map(block => block.price)),
+        highest_price: Math.max(...course.blocks.map(block => block.price))
+    };
     console.log("AUFGABE 3");
     console.log(result);
 }
@@ -50,7 +59,13 @@ const data = JSON.parse(rawdata);
 //          und "hebe" dir den kleineren bzw. größeren Wert auf.
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const course = data.driving_school.courses
+        .find(course => course.course_code === 'CB101');
+    const block = course.blocks
+        .find(block => block.block_id === 1);
+    const firstDay = block.schedule.reduce((min, date) => date.date < min ? date.date : min, '2999-12-31');
+    const lastDay = block.schedule.reduce((max, date) => date.date > max ? date.date : max, '2000-01-01');
+    const result = { first_day: firstDay, last_day: lastDay };
     console.log("AUFGABE 4");
     console.log(result);
 }
@@ -60,7 +75,10 @@ const data = JSON.parse(rawdata);
 // Wie viele Kunden gibt es in den Blöcken des Kurses BC101?
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const course = data.driving_school.courses
+        .find(course => course.course_code === 'BC101');
+    const totalCustomers = course.blocks.reduce((sum, block) => sum + block.customers.length, 0);
+    const result = { total_customers: totalCustomers };
     console.log("AUFGABE 5");
     console.table(result);
 }
@@ -73,7 +91,12 @@ const data = JSON.parse(rawdata);
 //          Beim Umsatz musst du im reduce die Länge mal den Preis berechen und addieren.
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const result = data.driving_school.courses.map(course => ({
+        course_name: course.course_name,
+        course_code: course.course_code,
+        customers: course.blocks.reduce((sum, block) => sum + block.customers.length, 0),
+        revenue: course.blocks.reduce((sum, block) => sum + block.customers.length * block.price, 0)
+    }));
     console.log("AUFGABE 6");
     console.table(result);
 }
@@ -89,7 +112,11 @@ const data = JSON.parse(rawdata);
 //          Dann projiziere das Array mit den Ids so, dass du jede Ids im Instruktor Array suchst.
 // *************************************************************************************************
 {
-    const result = null; // Replace null with your implementation.
+    const instructors = data.driving_school.courses
+        .map(course => course.blocks.map(block => block.instructor))
+        .flat();
+    const instructorIds = Array.from(new Set(instructors.map(instructor => instructor.id)));
+    const result = instructorIds.map(id => instructors.find(instructor => instructor.id === id));
     console.log("AUFGABE 7");
     console.table(result);
 }
