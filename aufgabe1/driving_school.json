@@ -1,0 +1,259 @@
+{
+    "driving_school": {
+        "courses": [
+            {
+                "course_name": "Basic Course",
+                "course_code": "BC101",
+                "blocks": [
+                    {
+                        "block_id": 1,
+                        "price": 200.0,
+                        "schedule": [
+                            {
+                                "date": "2024-11-05",
+                                "time": "10:00",
+                                "location": "Classroom A"
+                            },
+                            {
+                                "date": "2024-11-07",
+                                "time": "10:00",
+                                "location": "Classroom A"
+                            },
+                            {
+                                "date": "2024-11-09",
+                                "time": "10:00",
+                                "location": "Classroom A"
+                            },
+                            {
+                                "date": "2024-11-12",
+                                "time": "10:00",
+                                "location": "Classroom A"
+                            },
+                            {
+                                "date": "2024-11-14",
+                                "time": "10:00",
+                                "location": "Classroom A"
+                            }
+                        ],
+                        "instructor": {
+                            "id": 1,
+                            "name": "John Smith"
+                        },
+                        "customers": [
+                            {
+                                "id": 101,
+                                "name": "Alice Johnson"
+                            },
+                            {
+                                "id": 102,
+                                "name": "Bob Lee"
+                            }
+                        ]
+                    },
+                    {
+                        "block_id": 2,
+                        "price": 220.0,
+                        "schedule": [
+                            {
+                                "date": "2024-11-20",
+                                "time": "14:00",
+                                "location": "Classroom B"
+                            },
+                            {
+                                "date": "2024-11-22",
+                                "time": "14:00",
+                                "location": "Classroom B"
+                            },
+                            {
+                                "date": "2024-11-24",
+                                "time": "14:00",
+                                "location": "Classroom B"
+                            },
+                            {
+                                "date": "2024-11-26",
+                                "time": "14:00",
+                                "location": "Classroom B"
+                            },
+                            {
+                                "date": "2024-11-28",
+                                "time": "14:00",
+                                "location": "Classroom B"
+                            }
+                        ],
+                        "instructor": {
+                            "id": 2,
+                            "name": "Sarah Williams"
+                        },
+                        "customers": [
+                            {
+                                "id": 103,
+                                "name": "Charles Kim"
+                            },
+                            {
+                                "id": 104,
+                                "name": "Dana White"
+                            },
+                            {
+                                "id": 106,
+                                "name": "Frank Martin"
+                            }                            
+                        ]
+                    }
+                ]
+            },
+            {
+                "course_name": "Class A",
+                "course_code": "CA101",
+                "blocks": [
+                    {
+                        "block_id": 1,
+                        "price": 250.0,
+                        "schedule": [
+                            {
+                                "date": "2024-11-10",
+                                "time": "09:00",
+                                "location": "Track A"
+                            },
+                            {
+                                "date": "2024-11-12",
+                                "time": "09:00",
+                                "location": "Track A"
+                            },
+                            {
+                                "date": "2024-11-14",
+                                "time": "09:00",
+                                "location": "Track A"
+                            },
+                            {
+                                "date": "2024-11-17",
+                                "time": "09:00",
+                                "location": "Track A"
+                            },
+                            {
+                                "date": "2024-11-19",
+                                "time": "09:00",
+                                "location": "Track A"
+                            }
+                        ],
+                        "instructor": {
+                            "id": 1,
+                            "name": "John Smith"
+                        },
+                        "customers": [
+                            {
+                                "id": 105,
+                                "name": "Eva Green"
+                            },
+                            {
+                                "id": 106,
+                                "name": "Frank Martin"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "course_name": "Class B",
+                "course_code": "CB101",
+                "blocks": [
+                    {
+                        "block_id": 1,
+                        "price": 300.0,
+                        "schedule": [
+                            {
+                                "date": "2024-11-06",
+                                "time": "11:00",
+                                "location": "Track B"
+                            },
+                            {
+                                "date": "2024-11-08",
+                                "time": "11:00",
+                                "location": "Track B"
+                            },
+                            {
+                                "date": "2024-11-10",
+                                "time": "11:00",
+                                "location": "Track B"
+                            },
+                            {
+                                "date": "2024-11-13",
+                                "time": "11:00",
+                                "location": "Track B"
+                            },
+                            {
+                                "date": "2024-11-15",
+                                "time": "11:00",
+                                "location": "Track B"
+                            }
+                        ],
+                        "instructor": {
+                            "id": 2,
+                            "name": "Sarah Williams"
+                        },
+                        "customers": [
+                            {
+                                "id": 107,
+                                "name": "George Clark"
+                            },
+                            {
+                                "id": 108,
+                                "name": "Hannah Lewis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "course_name": "Class AM",
+                "course_code": "CAM101",
+                "blocks": [
+                    {
+                        "block_id": 1,
+                        "price": 180.0,
+                        "schedule": [
+                            {
+                                "date": "2024-11-03",
+                                "time": "13:00",
+                                "location": "Classroom C"
+                            },
+                            {
+                                "date": "2024-11-05",
+                                "time": "13:00",
+                                "location": "Classroom C"
+                            },
+                            {
+                                "date": "2024-11-07",
+                                "time": "13:00",
+                                "location": "Classroom C"
+                            },
+                            {
+                                "date": "2024-11-10",
+                                "time": "13:00",
+                                "location": "Classroom C"
+                            },
+                            {
+                                "date": "2024-11-12",
+                                "time": "13:00",
+                                "location": "Classroom C"
+                            }
+                        ],
+                        "instructor": {
+                            "id": 3,
+                            "name": "Chris Adams"
+                        },
+                        "customers": [
+                            {
+                                "id": 109,
+                                "name": "Ivy Cooper"
+                            },
+                            {
+                                "id": 110,
+                                "name": "Jack King"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

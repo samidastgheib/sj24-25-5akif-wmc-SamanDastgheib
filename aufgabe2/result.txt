@@ -1,0 +1,6 @@
+
+> aufgabe2@1.0.0 start
+> tsc && node src/app.js
+
+4 courses loaded.
+List of customers in BC101, Block 1: [ { id: 101, name: 'Alice Johnson' }, { id: 102, name: 'Bob Lee' } ]

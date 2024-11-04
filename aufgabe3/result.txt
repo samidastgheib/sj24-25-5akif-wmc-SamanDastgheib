@@ -1,0 +1,10 @@
+
+> aufgabe3@1.0.0 start
+> tsc && node src/app.js
+
+TodoTask Amet aliquid laborum illo perspiciatis dolorum. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
+TodoTask Qui ad nisi provident reiciendis ea et doloribus quia odio. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
+TodoTask Hic reprehenderit ipsum odit earum qui illum maiores vel. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
+TodoTask Voluptatem voluptatem beatae. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
+TodoTask Ipsum earum deleniti nobis corrupti. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
+TodoTask Tempora qui voluptatem deleniti in at ipsum. is in TodoItem Itaque et earum modi similique veniam explicabo quo.
